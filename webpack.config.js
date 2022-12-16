@@ -44,7 +44,7 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        "about" : "about@http://localhost:3001/remoteEntry.js"
+        "about" : "about@https://micro-profile-about.vercel.app/remoteEntry.js"
       },
       exposes: {},
       shared: {
