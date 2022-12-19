@@ -1,10 +1,11 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+require("dotenv").config()
 
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "https://micro-profile-host.vercel.app/",
+    publicPath: `${process.env.REACT_APP_DEVELOPMENT === "true" ? "http://localhost:3000/" : process.env.REACT_APP_CURENT_URL}`,
   },
 
   resolve: {
@@ -44,9 +45,11 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        "about" : "about@https://micro-profile-about.vercel.app/remoteEntry.js"
+        "about" : `about@${process.env.REACT_APP_ABOUT_URL}remoteEntry.js`
       },
-      exposes: {},
+      exposes: {
+        "./recoil" : "./src/recoil"
+      },
       shared: {
         ...deps,
         react: {

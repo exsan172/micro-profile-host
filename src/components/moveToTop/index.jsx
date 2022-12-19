@@ -8,7 +8,7 @@ const MoveToTop = () => {
     }
 
     return (
-        <div className="fixed bottom-10 right-10 flex w-[30px] h-[30px] bg-green-400 rounded-full p-1 select-none cursor-pointer" onClick={() => top()}>
+        <div className="fixed bottom-10 right-10 flex w-[50px] h-[50px] bg-green-400 rounded-full p-1 select-none cursor-pointer items-center" onClick={() => top()}>
             <Icon icon="ic:outline-keyboard-arrow-up" className="text-white" fontSize={40}/>
         </div>
     )

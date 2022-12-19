@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { RecoilRoot } from "recoil"
 
 import RoutesApp from "./routes";
 import "./index.scss";
 
-ReactDOM.render(<RoutesApp />, document.getElementById("app"));
+ReactDOM.render(<RecoilRoot><RoutesApp /></RecoilRoot>, document.getElementById("app"));
